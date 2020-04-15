@@ -11,7 +11,9 @@ public class Myntra_assign {
 
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-		ChromeDriver driver=new ChromeDriver();
+		ChromeOptions ch= new ChromeOptions();
+		ch.addArguments("--disable-notifications");
+		ChromeDriver driver=new ChromeDriver(ch);
 		//Open Browser
 		driver.get("https://www.myntra.com/");
 		driver.manage().window().maximize();
@@ -22,8 +24,7 @@ public class Myntra_assign {
 		builder.moveToElement(ele).perform();
 		//Click Jackets & Coats
 		driver.findElementByXPath("(//a[text()='Jackets & Coats'])[1]").click();
-		ChromeOptions ch= new ChromeOptions();
-		ch.addArguments("--disable-notifications");
+		
 		//Find the total count of item
 		String str = driver.findElementByClassName("title-count").getText();
 		String text = str.replaceAll("\\D","");
