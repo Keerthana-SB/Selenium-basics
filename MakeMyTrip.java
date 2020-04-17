@@ -71,22 +71,23 @@ public class MakeMyTrip {
 		//Click on the first resulting hotel and go to the new window
 		driver.findElementByXPath("//span[text()='Acron Waterfront Resort-Member ITC Hotel Group']").click();
 		Set<String> winSet = driver.getWindowHandles();
-        List<String> winList= new ArrayList<String>(winSet);
-        driver.switchTo().window(winList.get(1));
+                List<String> winList= new ArrayList<String>(winSet);
+                driver.switchTo().window(winList.get(1));
+                
+		//Print the Hotel Name
+               String hotelName = driver.findElementById("detpg_hotel_name").getText();
+               System.out.println("Hotel Name: "+hotelName);
+               Thread.sleep(5000);
         
-        //Print the Hotel Name
-        String hotelName = driver.findElementById("detpg_hotel_name").getText();
-        System.out.println("Hotel Name: "+hotelName);
-        Thread.sleep(5000);
         
-        //Click MORE OPTIONS link and Select 3Months plan and close
-        driver.findElementByXPath("//span[text()='MORE OPTIONS']").click();
-        driver.findElementByXPath("(//span[contains(@class,'right blueText')])[1]").click();
-        driver.findElementByClassName("close").click();
-        Thread.sleep(5000);
+               //Click MORE OPTIONS link and Select 3Months plan and close
+               driver.findElementByXPath("//span[text()='MORE OPTIONS']").click();
+               driver.findElementByXPath("(//span[contains(@class,'right blueText')])[1]").click();
+               driver.findElementByClassName("close").click();
+               Thread.sleep(5000);
         
-        //Click on BOOK THIS NOW
-        driver.findElementByXPath("//a[text()='BOOK THIS NOW']").click();
+                //Click on BOOK THIS NOW
+                driver.findElementByXPath("//a[text()='BOOK THIS NOW']").click();
 		driver.findElementByClassName("close").click();
 		
 		//Print the Total Payable amount
