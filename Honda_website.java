@@ -22,7 +22,7 @@ public class Honda_website {
 		options.addArguments("--disable-notifications");
 		ChromeDriver driver=new ChromeDriver(options);
 		Map<String, String> map = new LinkedHashMap<String, String>();
-		//Launch Hondo website
+		//Launch Honda website
 		driver.get("https://www.honda2wheelersindia.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
