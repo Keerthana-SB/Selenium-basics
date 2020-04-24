@@ -22,6 +22,7 @@ public class Honda_website {
 		options.addArguments("--disable-notifications");
 		ChromeDriver driver=new ChromeDriver(options);
 		Map<String, String> map = new LinkedHashMap<String, String>();
+		//Launch Hondo website
 		driver.get("https://www.honda2wheelersindia.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
@@ -64,7 +65,7 @@ public class Honda_website {
 		driver.findElementByLinkText("FAQ").click();
 		//Click Activa 125 BS-VI under Browse By Product
 		driver.findElementByLinkText("Activa 125 BS-VI").click();
-		//Click Vehicle Price 
+		//Click Vehicle PriceÂ 
 		driver.findElementByLinkText("Vehicle Price").click();
 		Thread.sleep(5000);
 		WebElement ele = driver.findElementByXPath("//option[text()='Activa 125 BS-VI']");
